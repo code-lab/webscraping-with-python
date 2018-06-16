@@ -30,7 +30,8 @@ def get_links(url):
 
 
 def prepare_response(links):
-    response = "<ol>"
+    response = "<p>Count: {}</p>".format(len(links))
+    response += "<ol>"
     for l in links:
         response += "<li><a href='{}'>{}</a></li>".format(l.attrs['href'], l.get_text())
     response += "</ol>"
